@@ -7,7 +7,13 @@
     "dev": "next dev -p 80",
     "build": "next build",
     "start": "next start -p 80",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:local": "APP_ENV=local next build",
+    "build:dev": "APP_ENV=dev next build",
+    "build:prod": "APP_ENV=prod next build",
+    "deploy:local": "pnpm build:local && pm2 start pm2.config.js --env local",
+    "deploy:dev": "pnpm build:dev && pm2 start pm2.config.js --env dev",
+    "deploy:prod": "pm2 start pm2.config.js --env prod"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.2",

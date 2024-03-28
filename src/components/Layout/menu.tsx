@@ -1,4 +1,4 @@
-import { FundOutlined, BarChartOutlined, DesktopOutlined, ScheduleOutlined, CalculatorOutlined, UserOutlined, WalletOutlined } from '@ant-design/icons';
+import { FundOutlined, LayoutOutlined, BarChartOutlined, DesktopOutlined, ScheduleOutlined, CalculatorOutlined, UserOutlined, WalletOutlined } from '@ant-design/icons';
 import React from 'react';
 
 const navList = [
@@ -28,6 +28,11 @@ const navList = [
         key: '/formEngine',
         icon: <CalculatorOutlined />,
         label: '表单引擎'
+    },
+    {
+        key: '/board',
+        icon: <LayoutOutlined />,
+        label: '办公白板'
     },
     {
         key: '/order',
