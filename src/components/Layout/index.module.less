@@ -1,0 +1,28 @@
+.logo {
+    margin: 16px;
+    display: inline-block;
+    width: calc(100% - 42px);
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(73, 82, 123, 0.3);
+    padding: 6px 12px 8px;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.rightControl {
+    display: flex;
+    margin-left: auto;
+    .mr(@gap: 26px) {
+        margin-right: @gap;
+    }
+    .mr();
+    .avatar {
+        cursor: pointer;
+    }
+    .theme, .msg, .group {
+        .mr();
+        cursor: pointer;
+    }
+}

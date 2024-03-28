@@ -1,0 +1,21 @@
+{
+    "index": {
+        "title": "Next-Admin",
+        "desc": "A full-stack, out-of-the-box, multi-page backend management solution developed based on NextJS 14.0+ and antd5.0",
+        "log": {
+            "title": "Next-Admin process planning",
+            "1": "Next-Admin basic engineering scheme",
+            "2": "Internationalized language support",
+            "3": "Log in to the Registration/Data Dashboard/Business List page",
+            "4": "Icon Management / Material Management",
+            "5": "Mind Map / Flowchart / 3D Visualization Page",
+            "6": "Page Building Engine / Form Engine",
+            "7": "World Wide Table"
+        },
+        "try": "try it now"
+    },
+    "404": {
+        "tip": "next-admin: The page you are visiting does not exist",
+        "goBack": "go back"
+    }
+}
