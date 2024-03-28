@@ -55,7 +55,7 @@ export default function Home() {
             />
           </div>
 
-          <div><Link href="/dashboard/monitor"><Button type="primary">{t('try')}</Button></Link></div>
+          <div><Link href="/dashboard"><Button type="primary">{t('try')}</Button></Link></div>
         </div>
         
       

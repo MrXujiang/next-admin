@@ -2,9 +2,9 @@
 // import { useTranslations} from 'next-intl';
 import { Button, Spin } from 'antd';
 import { useState, useRef, useEffect } from 'react';
+import { checkData } from './api';
 import Layout from '@/components/Layout';
 import Chart from '@/components/Chart';
-import { checkData } from './api';
 
 import styles from './index.module.less';
 

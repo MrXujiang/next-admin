@@ -1,11 +1,11 @@
 'use client'
 // import { useTranslations} from 'next-intl';
-import { Space, Table, Tag, theme, type TableProps } from 'antd';
+import { Table, theme } from 'antd';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Layout from '@/components/Layout';
 import AvaForm from './AvaForm';
 import { columns, data } from './column';
+import Layout from '@/components/Layout';
 
 
 

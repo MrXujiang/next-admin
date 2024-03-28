@@ -16,7 +16,6 @@ const MyChart = (props: IChart) => {
         // 避免在开发环境渲染两次
     if(isDev) {
         let curCache = localStorage.getItem(id);
-        console.log(111, curCache);
         if(!curCache) {
             localStorage.setItem(id, '1');
             chart = createChart(chartRef.current, type, data);

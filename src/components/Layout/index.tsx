@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Layout, Menu, theme, Avatar, Dropdown, ConfigProvider, Badge, Popover, type MenuProps } from 'antd';
 import navList from './menu';
@@ -52,15 +53,9 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
     token: { borderRadiusLG, colorTextBase, colorWarningText },
   } = theme.useToken();
 
-  const [curTheme, setCurTheme] = useState<boolean>(() => {
-    return !!localStorage.getItem('theme')
-  });
+  const [curTheme, setCurTheme] = useState<boolean>(false);
   const toggleTheme = () => {
-        setCurTheme(prev => {
-            localStorage.setItem('theme', !prev ? 'dark' : '')
-            return !prev
-        });
-
+        setCurTheme(prev => !prev);
   }
 
   const router = useRouter();

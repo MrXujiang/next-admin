@@ -5,31 +5,32 @@ import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { HolderOutlined } from '@ant-design/icons';
 import Layout from '@/components/Layout';
-import Sortable from 'sortablejs';
 import Chart from '@/components/Chart';
+import Sortable from 'sortablejs';
 
 
 import boardList from './board';
-// import { loginApi, registerApi } from './api';
 
 import styles from './index.module.less';
 
 
 export default function Dashboard() {
   // const t = useTranslations();
-  const router = useRouter();
   const boardContainerRef = useRef<any>();
 
   useEffect(() => {
-    const sortable = new Sortable(boardContainerRef.current, {
-        handle: ".moveBtn"
-    })
-  }, [])
+    setTimeout(() => {
+        const sortable = new Sortable(document.querySelector('#dashboard') as HTMLElement, {
+            handle: ".moveBtn"
+        })
+    }, 1000)
+   
+  }, [boardContainerRef])
 
   return (
     <Layout curActive='/dashboard'>
         <main className={styles.dashboardWrap}>
-            <div className={styles.content} ref={boardContainerRef}>
+            <div className={styles.content} id='dashboard'>
                 {
                     boardList.map((v, i) => {
                         return <div key={i} style={{width: v.w, height: v.h}} className={styles.card}> 
