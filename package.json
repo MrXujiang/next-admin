@@ -3,6 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "author": "alex xu",
+  "description": "An enterprise-grade middle and back office solution based on ANTD and NEXTJS",
+  "keywords": [
+    "ant",
+    "next.js",
+    "components",
+    "next-admin",
+    "admin stystem",
+    "frontend",
+    "react",
+    "react-component"
+  ],
+  "homepage": "http://next-admin.com",
+  "bugs": {
+    "url": "https://github.com/MrXujiang/next-admin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrXujiang/next-admin"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev -p 80",
     "build": "next build",
@@ -28,6 +48,7 @@
     "next-intl": "^3.9.4",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.33.3",
     "sortablejs": "^1.15.2"
   },
   "devDependencies": {

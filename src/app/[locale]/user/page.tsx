@@ -1,14 +1,10 @@
-'use client'
+'use client';
 // import { useTranslations} from 'next-intl';
 import { Table, theme } from 'antd';
-import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import AvaForm from './AvaForm';
 import { columns, data } from './column';
 import Layout from '@/components/Layout';
-
-
-
 import styles from './index.module.less';
 
 
@@ -21,10 +17,6 @@ export default function User() {
     borderRadius: token.borderRadiusLG,
     padding: 16
   };
-
-  useEffect(() => {
-    
-  }, [])
 
   return (
     <Layout curActive='/user'>

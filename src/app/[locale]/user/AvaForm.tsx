@@ -1,3 +1,4 @@
+'use client';
 import { Button, Col, Form, Input, Row, Select, Space, theme } from 'antd';
 import { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
