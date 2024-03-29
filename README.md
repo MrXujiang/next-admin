@@ -22,6 +22,7 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 
 - Preview: http://next-admin.com
 - Login Page: http://next-admin.com/user/login
+- china mirror: https://gitee.com/lowcode-china/next-admin
 
 ## 1.0 is out! 🎉🎉🎉
 

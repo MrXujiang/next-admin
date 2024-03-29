@@ -22,6 +22,7 @@ Language : [🇺🇸](./README.md)  | 🇨🇳
 
 - 预览: http://next-admin.com
 - 登录页面: http://next-admin.com/user/login
+- 国内镜像: https://gitee.com/lowcode-china/next-admin
 
 ## 1.0 版本! 🎉🎉🎉
 
