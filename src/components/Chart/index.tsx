@@ -20,6 +20,8 @@ const MyChart = (props: IChart) => {
             localStorage.setItem(id, '1');
             chart = createChart(chartRef.current, type, data);
         } 
+    }else {
+        chart = createChart(chartRef.current, type, data);
     }
     return () => {
         localStorage.removeItem(id);
