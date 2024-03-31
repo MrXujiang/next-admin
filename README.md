@@ -37,6 +37,7 @@ Next-Admin 1.0.0
 - Out-of-the-box business pages
 - Custom drag-and-drop reports are supported
 - Next Full-stack best practices
+- Support mobile PC adaptation
 
 ## Usage
 
