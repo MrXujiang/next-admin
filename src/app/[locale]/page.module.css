@@ -23,3 +23,18 @@
     display: inline-block;
     width: 40%;
 }
+
+@media screen and (max-width: 600px) {
+    /* CSS rules */
+    .content {
+        width: 90%;
+        margin: 30px auto;
+        padding: 10px 10px 20px;
+    }
+    .home {
+        padding-top: 60px;
+    }
+    .timeBox {
+        width: 60%;
+    }
+}

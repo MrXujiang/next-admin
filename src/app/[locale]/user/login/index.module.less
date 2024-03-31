@@ -30,6 +30,7 @@
             }
         }
     }
+    
     .content {
         padding: 20px;
         background-color: #fff;
@@ -49,6 +50,19 @@
                     right: 0;
                     top: 6px;
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        /* CSS rules */
+        .leftBanner {
+            display: none;
+        }
+        .content {
+            width: 100%;
+            .innerContent {
+                margin-left: 10px;
             }
         }
     }

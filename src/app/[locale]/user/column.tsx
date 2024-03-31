@@ -14,6 +14,8 @@ interface DataType {
       dataIndex: 'name',
       key: 'name',
       render: (text) => <a>{text}</a>,
+      fixed: 'left',
+      width: 100
     },
     {
       title: '角色',

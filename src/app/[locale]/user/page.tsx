@@ -15,7 +15,7 @@ export default function User() {
   const listStyle: React.CSSProperties = {
     background: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
-    padding: 16
+    padding: 12
   };
 
   return (
@@ -25,7 +25,7 @@ export default function User() {
                <AvaForm />
                 <div style={listStyle}>
                     <h3>用户列表</h3>
-                    <Table columns={columns} dataSource={data} pagination={{pageSize: 5}} />
+                    <Table columns={columns} dataSource={data} pagination={{pageSize: 5}} scroll={{ x: 1000 }} />
                 </div>
             </div>
         </main>
