@@ -14,6 +14,12 @@
         },
         "try": "try it now"
     },
+    "global": {
+        "technological exchanges": "Technological exchanges"
+    },
+    "user": {
+        "userList": "User List"
+    },
     "404": {
         "tip": "next-admin: The page you are visiting does not exist",
         "goBack": "go back"

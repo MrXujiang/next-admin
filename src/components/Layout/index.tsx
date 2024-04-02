@@ -10,7 +10,7 @@ import {
     SunOutlined
 } from '@ant-design/icons';
 import { getThemeBg } from '@/utils';
-import { Link, pathnames } from '../../navigation';
+import { Link, pathnames, usePathname } from '../../navigation';
 import styles from './index.module.less';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -53,12 +53,18 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
     token: { borderRadiusLG, colorTextBase, colorWarningText },
   } = theme.useToken();
 
+  const t = useTranslations('global');
+
+  const locale = useLocale();
+  const otherLocale:any = locale === 'en' ? ['zh', '中'] : ['en', 'En'];
+
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [curTheme, setCurTheme] = useState<boolean>(false);
   const toggleTheme = () => {
         setCurTheme(prev => !prev);
   }
-
-  const router = useRouter();
 
   const handleSelect = (row: {key: string}) => {
     router.push(row.key)
@@ -95,7 +101,7 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                     <div className={styles.rightControl}>
                         <span className={styles.group}>
                             <Popover content={<div style={{width: '100%'}}><img src="/tech.png" /></div>} title="技术交流&分享">
-                                技术交流
+                                { t('technological exchanges') }
                             </Popover>
                         </span>
                         <span className={styles.msg}>
@@ -103,6 +109,9 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                                 <BellOutlined />
                             </Badge>
                         </span>
+                        <Link href={pathname as any} locale={otherLocale[0]} className={styles.i18n} style={{color: colorTextBase}}>
+                            {otherLocale[1]}
+                        </Link>
                         <span onClick={toggleTheme} className={styles.theme}>
                             {
                                 !curTheme ? <SunOutlined style={{color: colorWarningText}} /> : <MoonOutlined />

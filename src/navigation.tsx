@@ -12,14 +12,14 @@ import {
   
   export const pathnames = {
     '/': '/',
-    '/design/doc/edit': '/design/doc/edit',
+    '/user': '/user',
+    '/dashboard': '/dashboard',
     // '/client': '/client',
     // '/client/redirect': '/client/redirect',
     // '/nested': {
     //   en: '/nested',
     //   zh: '/verschachtelt'
     // },
-    // '/redirect': '/redirect',
     // '/news/[articleId]': {
     //   en: '/news/[articleId]',
     //   zh: '/neuigkeiten/[articleId]'

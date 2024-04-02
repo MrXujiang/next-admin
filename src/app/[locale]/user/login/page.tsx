@@ -1,5 +1,5 @@
 'use client'
-// import { useTranslations} from 'next-intl';
+import { useTranslations} from 'next-intl';
 import { Button, Form, Input, Segmented, type FormProps } from 'antd';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -17,7 +17,7 @@ type FieldType = {
 const mode = ['登录', '注册'];
 
 export default function Home() {
-  // const t = useTranslations();
+  const t = useTranslations();
   const [curMode, setCurMode] = useState(mode[0]);
   const [form] = Form.useForm();
   const router = useRouter();

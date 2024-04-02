@@ -14,6 +14,12 @@
         },
         "try": "立即体验"
     },
+    "global": {
+        "technological exchanges": "技术交流"
+    },
+    "user": {
+        "userList": "用户列表"
+    },
     "404": {
         "tip": "next-admin: 您访问的页面不存在",
         "goBack": "返回首页"
