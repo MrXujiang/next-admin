@@ -15,7 +15,15 @@
         "try": "立即体验"
     },
     "global": {
-        "technological exchanges": "技术交流"
+        "technological exchanges": "技术交流",
+        "dashboard": "数据大盘",
+        "customChart": "'自定义报表",
+        "monitor": "数据监控",
+        "userManage": "用户管理",
+        "formEngine": "表单引擎",
+        "board": "办公白板",
+        "orderList": "订单列表",
+        "resource": "资产管理"
     },
     "user": {
         "userList": "用户列表"

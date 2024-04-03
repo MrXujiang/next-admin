@@ -1,50 +1,52 @@
 import { FundOutlined, LayoutOutlined, BarChartOutlined, DesktopOutlined, ScheduleOutlined, CalculatorOutlined, UserOutlined, WalletOutlined } from '@ant-design/icons';
 import React from 'react';
 
-const navList = [
-    {
-        key: '/',
-        icon: <DesktopOutlined />,
-        label: '数据大盘',
-        children: [
-            {
-                key: '/dashboard',
-                icon: <BarChartOutlined />,
-                label: '自定义报表'
-            },
-            {
-                key: '/dashboard/monitor',
-                icon: <FundOutlined />,
-                label: '数据监控'
-            }
-        ]
-    },
-    {
-        key: '/user',
-        icon: <UserOutlined />,
-        label: '用户管理'
-    },
-    {
-        key: '/formEngine',
-        icon: <CalculatorOutlined />,
-        label: '表单引擎'
-    },
-    {
-        key: '/board',
-        icon: <LayoutOutlined />,
-        label: '办公白板'
-    },
-    {
-        key: '/order',
-        icon: <ScheduleOutlined />,
-        label: '订单列表'
-    },
-    {
-        key: '/resource',
-        icon: <WalletOutlined />,
-        label: '资产管理'
-    },
-    
-]
+const getNavList = (t: any) => {
+    return [
+        {
+            key: '/',
+            icon: <DesktopOutlined />,
+            label: t('dashboard'),
+            children: [
+                {
+                    key: '/dashboard',
+                    icon: <BarChartOutlined />,
+                    label: t('customChart')
+                },
+                {
+                    key: '/dashboard/monitor',
+                    icon: <FundOutlined />,
+                    label: t('monitor')
+                }
+            ]
+        },
+        {
+            key: '/user',
+            icon: <UserOutlined />,
+            label: t('userManage')
+        },
+        {
+            key: '/formEngine',
+            icon: <CalculatorOutlined />,
+            label: t('formEngine')
+        },
+        {
+            key: '/board',
+            icon: <LayoutOutlined />,
+            label: t('board')
+        },
+        {
+            key: '/order',
+            icon: <ScheduleOutlined />,
+            label: t('orderList')
+        },
+        {
+            key: '/resource',
+            icon: <WalletOutlined />,
+            label: t('resource')
+        },
+        
+    ]
+}
 
-export default navList
+export default getNavList

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Layout, Menu, theme, Avatar, Dropdown, ConfigProvider, Badge, Popover, type MenuProps } from 'antd';
-import navList from './menu';
+import getNavList from './menu';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import {
@@ -60,6 +60,7 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
 
   const router = useRouter();
   const pathname = usePathname();
+  const navList = getNavList(t);
 
   const [curTheme, setCurTheme] = useState<boolean>(false);
   const toggleTheme = () => {
