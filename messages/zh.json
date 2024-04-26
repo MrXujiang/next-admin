@@ -23,7 +23,8 @@
         "formEngine": "表单引擎",
         "board": "办公白板",
         "orderList": "订单列表",
-        "resource": "资产管理"
+        "resource": "资产管理",
+        "dragMode": "拖拽搭建"
     },
     "user": {
         "userList": "用户列表"

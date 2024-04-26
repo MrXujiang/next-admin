@@ -14,6 +14,12 @@ dependencies:
   '@antv/g2':
     specifier: 5.1.15-beta.4
     version: 5.1.15-beta.4
+  '@daybrush/utils':
+    specifier: ^1.13.0
+    version: 1.13.0
+  '@moveable/helper':
+    specifier: ^0.1.3
+    version: 0.1.3
   antd:
     specifier: ^5.15.2
     version: 5.15.3(react-dom@18.2.0)(react@18.2.0)
@@ -41,6 +47,18 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  react-draggable:
+    specifier: ^4.4.6
+    version: 4.4.6(react-dom@18.2.0)(react@18.2.0)
+  react-keycon:
+    specifier: ^0.3.0
+    version: 0.3.0
+  react-moveable:
+    specifier: ^0.56.0
+    version: 0.56.0
+  react-selecto:
+    specifier: ^1.26.3
+    version: 1.26.3
   sharp:
     specifier: ^0.33.3
     version: 0.33.3
@@ -408,9 +426,49 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.1
 
+  /@cfcs/core@0.0.26:
+    resolution: {integrity: sha512-bqbNKLNIjiNZ29WX3+TPdw98YusWXwQkcRcpS8vCPf6+2FRPhHFg+AXSfmTsDzbcrR48ZY7NrxY2w52M/P1SpA==}
+    dependencies:
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@cfcs/core@0.0.6:
+    resolution: {integrity: sha512-FxfJMwoLB8MEMConeXUCqtMGqxdtePQxRBOiGip9ULcYYam3WfCgoY6xdnMaSkYvRvmosp5iuG+TiPofm65+Pw==}
+    dependencies:
+      '@egjs/component': 3.0.5
+    dev: false
+
+  /@cfcs/react@0.0.6:
+    resolution: {integrity: sha512-PfMS9BGiGWVY+YVB7iIj/YxBUtklwV1ArH+rRYLIqqonwRLyKfvmXJQUAIapGFymdjNR3C4z9ZA9sF3kIONxKQ==}
+    dependencies:
+      '@cfcs/core': 0.0.26
+    dev: false
+
   /@ctrl/tinycolor@3.6.1:
     resolution: {integrity: sha512-SITSV6aIXsuVNV3f3O0f2n/cgyEDWoSqtZMYiAmcsYHydcKrOz3gUxB/iXd/Qf08+IZX4KpgNbvUdMBmWz+kcA==}
     engines: {node: '>=10'}
+    dev: false
+
+  /@daybrush/utils@1.13.0:
+    resolution: {integrity: sha512-ALK12C6SQNNHw1enXK+UO8bdyQ+jaWNQ1Af7Z3FNxeAwjYhQT7do+TRE4RASAJ3ObaS2+TJ7TXR3oz2Gzbw0PQ==}
+    dev: false
+
+  /@egjs/agent@2.4.3:
+    resolution: {integrity: sha512-XvksSENe8wPeFlEVouvrOhKdx8HMniJ3by7sro2uPF3M6QqWwjzVcmvwoPtdjiX8O1lfRoLhQMp1a7NGlVTdIA==}
+    dev: false
+
+  /@egjs/children-differ@1.0.1:
+    resolution: {integrity: sha512-DRvyqMf+CPCOzAopQKHtW+X8iN6Hy6SFol+/7zCUiE5y4P/OB8JP8FtU4NxtZwtafvSL4faD5KoQYPj3JHzPFQ==}
+    dependencies:
+      '@egjs/list-differ': 1.0.1
+    dev: false
+
+  /@egjs/component@3.0.5:
+    resolution: {integrity: sha512-cLcGizTrrUNA2EYE3MBmEDt2tQv1joVP1Q3oDisZ5nw0MZDx2kcgEXM+/kZpfa/PAkFvYVhRUZwytIQWoN3V/w==}
+    dev: false
+
+  /@egjs/list-differ@1.0.1:
+    resolution: {integrity: sha512-OTFTDQcWS+1ZREOdCWuk5hCBgYO4OsD30lXcOCyVOAjXMhgL5rBRDnt/otb6Nz8CzU0L/igdcaQBDLWc4t9gvg==}
     dev: false
 
   /@emnapi/runtime@1.1.0:
@@ -790,6 +848,12 @@ packages:
       call-bind: 1.0.7
     dev: false
 
+  /@moveable/helper@0.1.3:
+    resolution: {integrity: sha512-hSSyPkU7/cZuJys79rG0/xMs2Py09a8RUvBtpi/AftLYeSS8JAmMNwiw9lL19nddsVNB9cb2UON+U6uyFNS8Zw==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+    dev: false
+
   /@next/env@14.1.3:
     resolution: {integrity: sha512-VhgXTvrgeBRxNPjyfBsDIMvgsKDxjlpw4IAUsHCX8Gjl1vtHUYRT3+xfQ/wwvLPDd/6kqfLqk9Pt4+7gysuCKQ==}
     dev: false
@@ -1006,6 +1070,25 @@ packages:
   /@rushstack/eslint-patch@1.8.0:
     resolution: {integrity: sha512-0HejFckBN2W+ucM6cUOlwsByTKt9/+0tWhqUffNIcHqCXkthY/mZ7AuYPK/2IIaGWhdl0h+tICDO0ssLMd6XMQ==}
     dev: true
+
+  /@scena/dragscroll@1.4.0:
+    resolution: {integrity: sha512-3O8daaZD9VXA9CP3dra6xcgt/qrm0mg0xJCwiX6druCteQ9FFsXffkF8PrqxY4Z4VJ58fFKEa0RlKqbsi/XnRA==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+      '@scena/event-emitter': 1.0.5
+    dev: false
+
+  /@scena/event-emitter@1.0.5:
+    resolution: {integrity: sha512-AzY4OTb0+7ynefmWFQ6hxDdk0CySAq/D4efljfhtRHCOP7MBF9zUfhKG3TJiroVjASqVgkRJFdenS8ArZo6Olg==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+    dev: false
+
+  /@scena/matrix@1.1.1:
+    resolution: {integrity: sha512-JVKBhN0tm2Srl+Yt+Ywqu0oLgLcdemDQlD1OxmN9jaCTwaFPZ7tY8n6dhVgMEaR9qcR7r+kAlMXnSfNyYdE+Vg==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+    dev: false
 
   /@swc/helpers@0.5.2:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
@@ -1712,6 +1795,11 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -1787,6 +1875,19 @@ packages:
   /crypto@1.0.1:
     resolution: {integrity: sha512-VxBKmeNcqQdiUQUW2Tzq0t377b54N2bMtXO/qiLa+6eRRmmC4qT3D4OnTGoT/U6O9aklQ/jTwbOtRMTTY8G0Ig==}
     deprecated: This package is no longer supported. It's now a built-in Node module. If you've depended on crypto, you should switch to the one that's built-in.
+    dev: false
+
+  /css-styled@1.0.8:
+    resolution: {integrity: sha512-tCpP7kLRI8dI95rCh3Syl7I+v7PP+2JYOzWkl0bUEoSbJM+u8ITbutjlQVf0NC2/g4ULROJPi16sfwDIO8/84g==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+    dev: false
+
+  /css-to-mat@1.1.1:
+    resolution: {integrity: sha512-kvpxFYZb27jRd2vium35G7q5XZ2WJ9rWjDUMNT36M3Hc41qCrLXFM5iEKMGXcrPsKfXEN+8l/riB4QzwwwiEyQ==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+      '@scena/matrix': 1.1.1
     dev: false
 
   /csstype@3.1.3:
@@ -2664,6 +2765,10 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
 
+  /framework-utils@1.1.0:
+    resolution: {integrity: sha512-KAfqli5PwpFJ8o3psRNs8svpMGyCSAe8nmGcjQ0zZBWN2H6dZDnq+ABp3N3hdUmFeMrLtjOCTXD4yplUJIWceg==}
+    dev: false
+
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -2681,6 +2786,13 @@ packages:
 
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  /gesto@1.19.4:
+    resolution: {integrity: sha512-hfr/0dWwh0Bnbb88s3QVJd1ZRJeOWcgHPPwmiH6NnafDYvhTsxg+SLYu+q/oPNh9JS3V+nlr6fNs8kvPAtcRDQ==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+      '@scena/event-emitter': 1.0.5
+    dev: false
 
   /get-intrinsic@1.2.4:
     resolution: {integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==}
@@ -3200,6 +3312,19 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
+  /keycode@2.2.1:
+    resolution: {integrity: sha512-Rdgz9Hl9Iv4QKi8b0OlCRQEzp4AgVxyCtz5S/+VIHezDmrDhkp2N2TqBWOLz0/gbeREXOOiI9/4b8BY9uw2vFg==}
+    dev: false
+
+  /keycon@1.4.0:
+    resolution: {integrity: sha512-p1NAIxiRMH3jYfTeXRs2uWbVJ1WpEjpi8ktzUyBJsX7/wn2qu2VRXktneBLNtKNxJmlUYxRi9gOJt1DuthXR7A==}
+    dependencies:
+      '@cfcs/core': 0.0.6
+      '@daybrush/utils': 1.13.0
+      '@scena/event-emitter': 1.0.5
+      keycode: 2.2.1
+    dev: false
+
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
     dependencies:
@@ -3562,7 +3687,6 @@ packages:
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /object-inspect@1.12.3:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
@@ -3652,6 +3776,12 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /overlap-area@1.1.0:
+    resolution: {integrity: sha512-3dlJgJCaVeXH0/eZjYVJvQiLVVrPO4U1ZGqlATtx6QGO3b5eNM6+JgUKa7oStBTdYuGTk7gVoABCW6Tp+dhRdw==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+    dev: false
 
   /p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
@@ -3765,7 +3895,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
@@ -4322,6 +4451,13 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /react-css-styled@1.1.9:
+    resolution: {integrity: sha512-M7fJZ3IWFaIHcZEkoFOnkjdiUFmwd8d+gTh2bpqMOcnxy/0Gsykw4dsL4QBiKsxcGow6tETUa4NAUcmJF+/nfw==}
+    dependencies:
+      css-styled: 1.0.8
+      framework-utils: 1.1.0
+    dev: false
+
   /react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -4332,12 +4468,54 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-draggable@4.4.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-LtY5Xw1zTPqHkVmtM3X8MUOxNDOUhv/khTgBgrUvwaS064bwVvxT+q5El0uUFNx5IEPKXuRejr7UqLwBIg5pdw==}
+    peerDependencies:
+      react: '>= 16.3.0'
+      react-dom: '>= 16.3.0'
+    dependencies:
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
+  /react-keycon@0.3.0:
+    resolution: {integrity: sha512-F5fzotY2U892HQYIAnLflkaac3uKC+Gutl6PRu9VXermxnibDLX+lj/6ltoTHdLfrC75OKOPZTgdrvOgRd1WVQ==}
+    dependencies:
+      '@cfcs/react': 0.0.6
+      keycon: 1.4.0
+    dev: false
+
+  /react-moveable@0.56.0:
+    resolution: {integrity: sha512-FmJNmIOsOA36mdxbrc/huiE4wuXSRlmon/o+/OrfNhSiYYYL0AV5oObtPluEhb2Yr/7EfYWBHTxF5aWAvjg1SA==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+      '@egjs/agent': 2.4.3
+      '@egjs/children-differ': 1.0.1
+      '@egjs/list-differ': 1.0.1
+      '@scena/dragscroll': 1.4.0
+      '@scena/event-emitter': 1.0.5
+      '@scena/matrix': 1.1.1
+      css-to-mat: 1.1.1
+      framework-utils: 1.1.0
+      gesto: 1.19.4
+      overlap-area: 1.1.0
+      react-css-styled: 1.1.9
+      react-selecto: 1.26.3
+    dev: false
+
+  /react-selecto@1.26.3:
+    resolution: {integrity: sha512-Ubik7kWSnZyQEBNro+1k38hZaI1tJarE+5aD/qsqCOA1uUBSjgKVBy3EWRzGIbdmVex7DcxznFZLec/6KZNvwQ==}
+    dependencies:
+      selecto: 1.26.3
     dev: false
 
   /react@18.2.0:
@@ -4494,6 +4672,21 @@ packages:
     resolution: {integrity: sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==}
     dependencies:
       compute-scroll-into-view: 3.1.0
+    dev: false
+
+  /selecto@1.26.3:
+    resolution: {integrity: sha512-gZHgqMy5uyB6/2YDjv3Qqaf7bd2hTDOpPdxXlrez4R3/L0GiEWDCFaUfrflomgqdb3SxHF2IXY0Jw0EamZi7cw==}
+    dependencies:
+      '@daybrush/utils': 1.13.0
+      '@egjs/children-differ': 1.0.1
+      '@scena/dragscroll': 1.4.0
+      '@scena/event-emitter': 1.0.5
+      css-styled: 1.0.8
+      css-to-mat: 1.1.1
+      framework-utils: 1.1.0
+      gesto: 1.19.4
+      keycon: 1.4.0
+      overlap-area: 1.1.0
     dev: false
 
   /semver@5.7.2:

@@ -7,7 +7,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import {
     BellOutlined,
     MoonOutlined,
-    SunOutlined
+    SunOutlined,
+    TransactionOutlined
 } from '@ant-design/icons';
 import { getThemeBg } from '@/utils';
 import { Link, pathnames, usePathname } from '../../navigation';
@@ -103,6 +104,11 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                         <span className={styles.group}>
                             <Popover content={<div style={{width: '100%'}}><img src="/tech.png" /></div>} title="技术交流&分享">
                                 { t('technological exchanges') }
+                            </Popover>
+                        </span>
+                        <span className={styles.group}>
+                            <Popover content={<div style={{width: '100%'}}><img width={180} src="/pay.png" /></div>} title="开源不易，支持作者">
+                            <TransactionOutlined style={{color: 'red'}} /> 赞赏作者
                             </Popover>
                         </span>
                         <span className={styles.msg}>

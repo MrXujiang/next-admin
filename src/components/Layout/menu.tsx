@@ -1,4 +1,14 @@
-import { FundOutlined, LayoutOutlined, BarChartOutlined, DesktopOutlined, ScheduleOutlined, CalculatorOutlined, UserOutlined, WalletOutlined } from '@ant-design/icons';
+import { 
+    FundOutlined, 
+    LayoutOutlined, 
+    BarChartOutlined, 
+    DesktopOutlined, 
+    ScheduleOutlined, 
+    CalculatorOutlined, 
+    UserOutlined, 
+    WalletOutlined,
+    BuildOutlined 
+} from '@ant-design/icons';
 import React from 'react';
 
 const getNavList = (t: any) => {
@@ -29,6 +39,11 @@ const getNavList = (t: any) => {
             key: '/formEngine',
             icon: <CalculatorOutlined />,
             label: t('formEngine')
+        },
+        {
+            key: '/dragMode',
+            icon: <BuildOutlined />,
+            label: t('dragMode')
         },
         {
             key: '/board',
