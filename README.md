@@ -34,6 +34,7 @@ Next-Admin 1.0.0
 - Support i18n
 - Theme switching is supported
 - Integrate data visualization reports
+- Support drag and drop page
 - Out-of-the-box business pages
 - Custom drag-and-drop reports are supported
 - Next Full-stack best practices

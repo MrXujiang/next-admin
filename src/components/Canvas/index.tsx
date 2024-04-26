@@ -476,8 +476,8 @@ export default function Canvas(props: IProps) {
                     transform: i.base.transform
                 }}>
                     { i.name === 'Button' && <Button type="primary">Next-Admin</Button> }
-                    { i.name === 'Image' && <img src="/qtcode.png" alt="next-admin drag and drop" /> }
-                    {/* { i.name === 'Image' && <img src="/logo_bg.svg" alt="next-admin drag and drop" /> } */}
+                    {/* { i.name === 'Image' && <img src="/qtcode.png" alt="next-admin drag and drop" /> } */}
+                    { i.name === 'Image' && <img src="/logo_bg.svg" alt="next-admin drag and drop" /> }
                 </div>)}
                 <span id="cube_holder_block"></span>
             </div>
