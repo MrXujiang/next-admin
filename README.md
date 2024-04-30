@@ -39,6 +39,7 @@ Next-Admin 1.0.0
 - Custom drag-and-drop reports are supported
 - Next Full-stack best practices
 - Support mobile PC adaptation
+- Support JWT demo
 
 ## Usage
 
