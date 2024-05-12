@@ -7,7 +7,8 @@ import {
     CalculatorOutlined, 
     UserOutlined, 
     WalletOutlined,
-    BuildOutlined 
+    BuildOutlined,
+    OpenAIOutlined
 } from '@ant-design/icons';
 import React from 'react';
 
@@ -34,6 +35,11 @@ const getNavList = (t: any) => {
             key: '/user',
             icon: <UserOutlined />,
             label: t('userManage')
+        },
+        {
+            key: '/agents',
+            icon: <OpenAIOutlined />,
+            label: t('agents')
         },
         {
             key: '/formEngine',

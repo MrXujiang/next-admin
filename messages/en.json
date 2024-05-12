@@ -24,7 +24,8 @@
         "board": "Office whiteboard",
         "orderList": "List of orders",
         "resource": "Asset management",
-        "dragMode": "DragMode"
+        "dragMode": "DragMode",
+        "agents": "AI Agents"
     },
     "user": {
         "userList": "User List"

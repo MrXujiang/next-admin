@@ -38,6 +38,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.8.2",
     "@ant-design/nextjs-registry": "^1.0.0",
+    "@ant-design/pro-chat": "^1.13.6",
     "@antv/g2": "5.1.15-beta.4",
     "@daybrush/utils": "^1.13.0",
     "@moveable/helper": "^0.1.3",

@@ -1,0 +1,23 @@
+.chatWrap {
+    width: 600px;
+    height: calc(100vh - 210px) !important;
+}
+
+@media screen and (max-width: 800px) {
+    .chatWrap {
+        width: calc(100% - 60px);
+        :global(.ant-pro-chat-container) {
+            width: 100%;
+        }
+    }
+}
+
+.helloBox {
+    line-height: 1.6em;
+    .btn {
+        display: inline-block;
+        font-weight: bold;
+        border-bottom: 1px dashed rgb(23, 108, 226);
+        cursor: pointer;
+    }
+}

@@ -47,7 +47,10 @@ const nextConfig = {
             headers: CORS_HEADERS
           }
         ];
-      },
+    },
+    swcMinify: true,
+    fastRefresh: true,
+    concurrentFeatures: true
 };
 
 const withNextIntl = createNextIntlPlugin()(nextConfig);
