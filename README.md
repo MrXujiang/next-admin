@@ -40,6 +40,7 @@ Next-Admin 1.0.0
 - Next Full-stack best practices
 - Support mobile PC adaptation
 - Support JWT demo
+- Support AI conversations
 
 ## Usage
 
