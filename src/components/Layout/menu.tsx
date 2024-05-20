@@ -8,7 +8,8 @@ import {
     UserOutlined, 
     WalletOutlined,
     BuildOutlined,
-    OpenAIOutlined
+    OpenAIOutlined,
+    PartitionOutlined
 } from '@ant-design/icons';
 import React from 'react';
 
@@ -28,6 +29,11 @@ const getNavList = (t: any) => {
                     key: '/dashboard/monitor',
                     icon: <FundOutlined />,
                     label: t('monitor')
+                },
+                {
+                    key: '/dashboard/rpa',
+                    icon: <PartitionOutlined />,
+                    label: t('rpa')
                 }
             ]
         },

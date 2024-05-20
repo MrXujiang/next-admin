@@ -41,6 +41,7 @@ Next-Admin 1.0.0
 - Support mobile PC adaptation
 - Support JWT demo
 - Support AI conversations
+- Support Choreography
 
 ## Usage
 

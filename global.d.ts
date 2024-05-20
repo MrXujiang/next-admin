@@ -6,3 +6,5 @@ declare interface HTTP_RESPONSE {
     data: any,
     message: string
 }
+
+declare module 'butterfly-dag';
