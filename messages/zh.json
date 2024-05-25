@@ -12,13 +12,15 @@
             "6": "页面搭建引擎 / 表单引擎",
             "7": "万维表"
         },
-        "try": "立即体验"
+        "try": "立即体验",
+        "wep": "Nocode/WEP文档引擎"
     },
     "global": {
         "technological exchanges": "技术交流",
         "dashboard": "数据大盘",
-        "customChart": "'自定义报表",
+        "customChart": "自定义报表",
         "rpa": "可视化流程编排",
+        "drawio": "流程图编辑器",
         "monitor": "数据监控",
         "userManage": "用户管理",
         "formEngine": "表单引擎",
@@ -26,7 +28,8 @@
         "orderList": "订单列表",
         "resource": "资产管理",
         "dragMode": "拖拽搭建",
-        "agents": "AI智能问答"
+        "agents": "AI智能问答",
+        "excel": "电子表格"
     },
     "user": {
         "userList": "用户列表"

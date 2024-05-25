@@ -49,8 +49,8 @@ const nextConfig = {
         ];
     },
     swcMinify: true,
-    fastRefresh: true,
-    concurrentFeatures: true
+    // fastRefresh: true,
+    // concurrentFeatures: true
 };
 
 const withNextIntl = createNextIntlPlugin()(nextConfig);

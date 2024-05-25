@@ -20,6 +20,9 @@ dependencies:
   '@daybrush/utils':
     specifier: ^1.13.0
     version: 1.13.0
+  '@fortune-sheet/react':
+    specifier: ^0.19.7
+    version: 0.19.7(react-dom@18.2.0)(react@18.2.0)
   '@moveable/helper':
     specifier: ^0.1.3
     version: 0.1.3
@@ -56,6 +59,9 @@ dependencies:
   react-draggable:
     specifier: ^4.4.6
     version: 4.4.6(react-dom@18.2.0)(react@18.2.0)
+  react-drawio:
+    specifier: ^0.1.8
+    version: 0.1.8(react@18.2.0)
   react-keycon:
     specifier: ^0.3.0
     version: 0.3.0
@@ -1028,6 +1034,45 @@ packages:
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@formulajs/formulajs@2.9.3:
+    resolution: {integrity: sha512-WpgiuJaBl/Hcda9Ti8a7mlnw/vUZkJrtjABvojz6P6mo6d8EscudyA7iAt/kTLsgi0c8zfmzQd/Yjb4ASFkw+g==}
+    hasBin: true
+    dependencies:
+      bessel: 1.0.2
+      jstat: 1.9.6
+    dev: false
+
+  /@fortune-sheet/core@0.19.7:
+    resolution: {integrity: sha512-jEGoutt2a56pl+JioD+UPlMKgN1CJYWWqzcAgE9Y46H/IrZnihkBzsNHzy2ybKEinhUI/JFt5fpRXiSpkOw8/A==}
+    dependencies:
+      '@fortune-sheet/formula-parser': 0.2.11
+      dayjs: 1.11.10
+      immer: 9.0.21
+      lodash: 4.17.21
+      numeral: 2.0.6
+      uuid: 8.3.2
+    dev: false
+
+  /@fortune-sheet/formula-parser@0.2.11:
+    resolution: {integrity: sha512-phKoYu9Qx+jhE5o+eG3B79eOVmGBBQjMGH6Mg91+W2AsGbDi5EIOkFkNSUagOcb/CpVFeOOG6Vd3OdS00vhOVQ==}
+    dependencies:
+      '@formulajs/formulajs': 2.9.3
+      tiny-emitter: 2.1.0
+    dev: false
+
+  /@fortune-sheet/react@0.19.7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-dTaRzLoyhYJghj0WMFldHFMfr2vxzWxjDFNPZS6fAJXxw0fh8ca/y715ZDcVdrnJODPwDuNS2A3wTKxbwYFg/w==}
+    peerDependencies:
+      react: '>= 18.2'
+      react-dom: '>= 18.2'
+    dependencies:
+      '@fortune-sheet/core': 0.19.7
+      immer: 9.0.21
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -2552,6 +2597,11 @@ packages:
 
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  /bessel@1.0.2:
+    resolution: {integrity: sha512-Al3nHGQGqDYqqinXhQzmwmcRToe/3WyBv4N8aZc5Pef8xw2neZlR9VPi84Sa23JtgWcucu18HxVZrnI0fn2etw==}
+    engines: {node: '>=0.8'}
+    dev: false
 
   /big.js@5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
@@ -4547,6 +4597,10 @@ packages:
       semver: 7.6.0
     dev: false
 
+  /jstat@1.9.6:
+    resolution: {integrity: sha512-rPBkJbK2TnA8pzs93QcDDPlKcrtZWuuCo2dVR0TFLOJSxhqfWOVCSp8aV3/oSbn+4uY4yw1URtLpHQedtmXfug==}
+    dev: false
+
   /jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
@@ -5491,6 +5545,10 @@ packages:
       webpack: 5.90.3
     dev: true
 
+  /numeral@2.0.6:
+    resolution: {integrity: sha512-qaKRmtYPZ5qdw4jWJD6bxEf1FJEqllJrwxCLIm0sQU/A7v2/czigzOb+C2uSiFsa9lBUzeH7M1oK+Q+OLxL3kA==}
+    dev: false
+
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
@@ -6362,6 +6420,14 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /react-drawio@0.1.8(react@18.2.0):
+    resolution: {integrity: sha512-iHHQptTjl/QiPyBWatFgwyfUGx1HiwXOVspfZouHBqoi55RfrIYFFybjFNsbOtn7pCmZ/CqKqmSnqCdSXHnFnA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-hotkeys-hook@4.5.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Samb85GSgAWFQNvVt3PS90LPPGSf9mkH/r4au81ZP1yOIFayLC3QAvqTgGtJ8YEDMXtPmaVBs6NgipHO6h4Mug==}
     peerDependencies:
@@ -7202,6 +7268,10 @@ packages:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: false
 
+  /tiny-emitter@2.1.0:
+    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
+    dev: false
+
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -7447,6 +7517,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: false
+
+  /uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
     dev: false
 
   /uvu@0.5.6:

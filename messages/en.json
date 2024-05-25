@@ -12,7 +12,8 @@
             "6": "Page Building Engine / Form Engine",
             "7": "World Wide Table"
         },
-        "try": "try it now"
+        "try": "try it now",
+        "wep": "Nocode/WEP"
     },
     "global": {
         "technological exchanges": "Technological exchanges",
@@ -20,13 +21,15 @@
         "customChart": "Custom charts",
         "monitor": "Data monitoring",
         "rpa": "RPA",
+        "drawio": "Draw.io",
         "userManage": "User management",
         "formEngine": "Form engine",
         "board": "Office whiteboard",
         "orderList": "List of orders",
         "resource": "Asset management",
         "dragMode": "DragMode",
-        "agents": "AI Agents"
+        "agents": "AI Agents",
+        "excel": "Excel"
     },
     "user": {
         "userList": "User List"

@@ -23,6 +23,7 @@ Language : [🇺🇸](./README.md)  | 🇨🇳
 - 预览: http://next-admin.com
 - 登录页面: http://next-admin.com/user/login
 - 国内镜像: https://gitee.com/lowcode-china/next-admin
+- Nocode/WEP文档知识引擎: http://wep.turntip.cn
 
 ## 1.0 版本! 🎉🎉🎉
 
@@ -43,6 +44,7 @@ Next-Admin 1.0.0
 - 内置简单的JWT处理逻辑
 - 支持AI对话模块
 - 支持流程编排模块
+- 支持电子表格
 
 ## 使用
 

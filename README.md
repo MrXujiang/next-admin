@@ -4,7 +4,7 @@ Language : 🇺🇸 | [🇨🇳](./README.zh-CN.md)
   <a href="https://nextjs.org">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./tt.png">
-      <img src="./tt.png" height="128">
+      <img src="./public/favicon.png" height="128">
     </picture>
     <h1 align="center">Next-Admin</h1>
   </a>
@@ -16,17 +16,18 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 
 
 
-![](./tt.png)
+![](./public/admin.png)
 
 </div>
 
 - Preview: http://next-admin.com
 - Login Page: http://next-admin.com/user/login
 - china mirror: https://gitee.com/lowcode-china/next-admin
+- Nocode/WEP: http://wep.turntip.cn
 
 ## 1.0 is out! 🎉🎉🎉
 
-Next-Admin 1.0.0
+Next-Admin 1.2.0
 
 ## Features
 
@@ -42,6 +43,7 @@ Next-Admin 1.0.0
 - Support JWT demo
 - Support AI conversations
 - Support Choreography
+- Support Excel
 
 ## Usage
 

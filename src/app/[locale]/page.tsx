@@ -55,7 +55,10 @@ export default function Home() {
             />
           </div>
 
-          <div><Link href="/dashboard"><Button type="primary">{t('try')}</Button></Link></div>
+          <div>
+            <Link href="/dashboard" style={{marginRight: 20}}><Button type="primary">{t('try')}</Button></Link>
+            <Link href="http://wep.turntip.cn" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
+          </div>
         </div>
         
       

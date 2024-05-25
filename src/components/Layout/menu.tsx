@@ -9,7 +9,8 @@ import {
     WalletOutlined,
     BuildOutlined,
     OpenAIOutlined,
-    PartitionOutlined
+    PartitionOutlined,
+    FileExcelOutlined
 } from '@ant-design/icons';
 import React from 'react';
 
@@ -46,6 +47,11 @@ const getNavList = (t: any) => {
             key: '/agents',
             icon: <OpenAIOutlined />,
             label: t('agents')
+        },
+        {
+            key: '/excel',
+            icon: <FileExcelOutlined />,
+            label: t('excel')
         },
         {
             key: '/formEngine',
