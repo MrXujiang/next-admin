@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import { Workbook } from "@fortune-sheet/react";
+import 'regenerator-runtime/runtime';
 import "@fortune-sheet/react/dist/index.css"
 import styles from './index.module.less';
 

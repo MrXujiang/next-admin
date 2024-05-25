@@ -33,7 +33,7 @@
     "build:prod": "APP_ENV=prod next build",
     "deploy:local": "pnpm build:local && pm2 start pm2.config.js --env local",
     "deploy:dev": "pnpm build:dev && pm2 start pm2.config.js --env dev",
-    "deploy:prod": "pm2 start pm2.config.js --env prod"
+    "deploy:prod": "pnpm build && pm2 start pm2.config.js --env prod"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.2",
