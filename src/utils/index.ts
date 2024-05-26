@@ -70,11 +70,40 @@ function* selectionSort(arr: number[]) {
     }, time)
   })
 
+  interface IMemory {
+    data: any,
+    get: (key: string) => any,
+    set: (key: string, value: any) => void,
+    clear: () => void,
+    remove: (key: string) => void
+}
+
+const memoryManage: IMemory = {
+    data: null,
+    get(key: string) {
+        return this.data ? this.data[key] : null
+    },
+    set(key: string, value) {
+        if(!this.data) {
+            this.data = {};
+        }
+        this.data[key] = value;
+    },
+    clear() {
+        this.data = null;
+    },
+    remove(key: string) {
+        this.data[key] = null;
+        delete this.data[key];
+    }
+}
+
 export {
     getThemeBg,
     bubbleSort,
     selectionSort,
     insertionSort,
     sleep,
-    isDev
+    isDev,
+    memoryManage
 }
