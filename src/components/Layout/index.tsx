@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu, theme, Avatar, Dropdown, ConfigProvider, Badge, Popover, type MenuProps } from 'antd';
 import getNavList from './menu';
 import { useRouter } from 'next/navigation';
@@ -22,6 +22,10 @@ interface IProps {
     defaultOpen?: string[]
 }
 
+const onLogout = () => {
+    localStorage.removeItem("isDarkTheme")
+}
+
 const items: MenuProps['items'] = [
     {
       key: '1',
@@ -42,7 +46,7 @@ const items: MenuProps['items'] = [
     {
       key: '3',
       label: (
-        <a target="_blank" rel="noopener noreferrer" href="/user/login">
+        <a target="_blank" onClick={onLogout} rel="noopener noreferrer" href="/user/login">
           退出登录
         </a>
       ),
@@ -65,12 +69,19 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
 
   const [curTheme, setCurTheme] = useState<boolean>(false);
   const toggleTheme = () => {
-        setCurTheme(prev => !prev);
+        const _curTheme = !curTheme;
+        setCurTheme(_curTheme);
+        localStorage.setItem('isDarkTheme', _curTheme ? 'true' : '');
   }
 
   const handleSelect = (row: {key: string}) => {
     router.push(row.key)
   }
+
+  useEffect(() => {
+      const isDark = !!localStorage.getItem("isDarkTheme");
+      setCurTheme(isDark);
+  }, []);
 
   return (
     <ConfigProvider
