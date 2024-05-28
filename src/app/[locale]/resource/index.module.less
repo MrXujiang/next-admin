@@ -1,0 +1,27 @@
+.fuildWrap {
+    display: block;
+    column-count: 3;
+    grid-column-gap: 12px;
+    column-gap: 12px;
+    :global(.cardImg) {
+        /* width: calc(50% - 24px); */
+        margin-bottom: 12px;
+        overflow: hidden;
+        transition: transform .3s;
+        &:hover {
+          transform: translateY(-6px);
+        }
+        img {
+          width: 100%;
+          border-radius: 6px;
+        }
+      }
+  }
+
+  
+
+  @media screen and (max-width: 600px) {
+    .fuildWrap {
+      column-count: 1;
+    }
+  }

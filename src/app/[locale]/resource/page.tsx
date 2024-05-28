@@ -2,28 +2,53 @@
 // import { useTranslations} from 'next-intl';
 import { Tabs, Empty, type TabsProps } from 'antd';
 import Layout from '@/components/Layout';
+import styles from './index.module.less';
 
-const MyEmpty = <Empty
-    image="/landing.svg"
-    imageStyle={{ height: 410, paddingTop: 160 }}
-    description={"空空如也~"}
-  ></Empty>
+const List = <div className={styles.fuildWrap}>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FlQJxRYRJx2sMeIuKw76IOJCH-Wp" alt="流程图编辑器 - drawio" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/Flpu2lB2-XQghamF6kDBqMsUzM65" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FpSCq3pN5AonJpRGbiAPxdYqreeN" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FgIzNE5vqLi1Nloxm3Nv7VuqmBJl" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FlQJxRYRJx2sMeIuKw76IOJCH-Wp" alt="流程图编辑器 - drawio" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/Flpu2lB2-XQghamF6kDBqMsUzM65" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FpSCq3pN5AonJpRGbiAPxdYqreeN" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FgIzNE5vqLi1Nloxm3Nv7VuqmBJl" alt="可视化白板工具" />
+  </div>
+  <div className="cardImg">
+    <img src="https://cdn.dooring.cn/FgIzNE5vqLi1Nloxm3Nv7VuqmBJl" alt="可视化白板工具" />
+  </div>
+</div>
 
 const items: TabsProps['items'] = [
   {
     key: '1',
     label: '图片',
-    children: MyEmpty,
+    children: List,
   },
   {
     key: '2',
     label: '音频',
-    children: MyEmpty,
+    children: List,
   },
   {
     key: '3',
     label: '视频',
-    children: MyEmpty,
+    children: List,
   },
 ];
 
