@@ -98,8 +98,15 @@ const memoryManage: IMemory = {
     }
 }
 
+const uniqueId = (prefix = 'wep') => {
+  const timeStr = Date.now() + '';
+  const random = (Math.random() + '').slice(2, 4);
+  return `${prefix}_${random}${timeStr}`
+}
+
 export {
     getThemeBg,
+    uniqueId,
     bubbleSort,
     selectionSort,
     insertionSort,

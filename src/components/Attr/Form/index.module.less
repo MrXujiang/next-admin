@@ -1,0 +1,32 @@
+.formWrap {
+    padding-left: 6px;
+    .shadowWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .animationWrap {
+        width: calc(100% + 20px);
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            width: calc(50% - 8px);
+            margin-right: 8px;
+            margin-bottom: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+            font-size: 14px;
+            border-radius: 6px;
+            &:hover, &.active {
+                background: #000;
+                color: #fff;
+                cursor: pointer;
+            }
+            &:nth-child(2n + 2) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+

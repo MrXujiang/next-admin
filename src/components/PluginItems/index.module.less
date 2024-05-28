@@ -1,0 +1,36 @@
+.pluginItemWrap {
+    .tplCate {
+        width: calc(100% - 16px);
+    }
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+            position: relative;
+            width: calc(50% - 12px);
+            margin-right: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            img {
+                width: 100%;
+            }
+            .useBtn {
+                position: absolute;
+                bottom: 30px;
+                display: none;
+                z-index: 2;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:hover {
+                img {
+                    filter: blur(2px);
+                }
+                .useBtn {
+                    display: block;
+                }
+            }
+        }
+    }
+}

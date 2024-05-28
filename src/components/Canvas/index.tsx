@@ -3,16 +3,17 @@
 import { deepFlat } from "@daybrush/utils";
 import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import Selecto from "react-selecto";
-import { Tooltip, theme, Button } from 'antd';
-import { HolderOutlined } from '@ant-design/icons';
+import { Tooltip, theme, Button, Divider, Popover, InputNumber, Form } from 'antd';
+import { HolderOutlined, DesktopOutlined } from '@ant-design/icons';
 import Moveable, { MoveableTargetGroupsType, DraggableRequestParam } from "react-moveable";
 import { GroupManager, TargetList } from "@moveable/helper";
 import { useKeycon } from "react-keycon";
 import Draggable from 'react-draggable';
 import { memoryManage } from '@/utils/index';
-import toolbar from "./toolbar";
+import toolbar, { defaultDESize } from "./toolbar";
 import { hideElementById } from '@/utils/dom';
 import styles from './index.less';
+
 
 interface IProps {
     width: number,
@@ -25,7 +26,7 @@ interface IProps {
 export default function Canvas(props: IProps) {
     const { width, height, onItemDrop, schema, onItemClick } = props;
     const {
-        token: { colorBgContainer, borderRadius, colorTextLabel },
+        token: { colorBgContainer, borderRadius, colorTextLabel, colorFillContentHover, colorTextBase, colorLink },
       } = theme.useToken();
     const { isKeydown: isCommand } = useKeycon({ keys: "meta" });
     const { isKeydown: isShift } = useKeycon({ keys: "shift" });
@@ -35,6 +36,8 @@ export default function Canvas(props: IProps) {
     const moveableRef = useRef<Moveable>(null);
     const selectoRef = useRef<Selecto>(null);
     const canvasRef = useRef<any>(null);
+
+    const [form] = Form.useForm();
 
     const cubes = useMemo(() => {
         return Object.values(schema)
@@ -279,6 +282,53 @@ export default function Canvas(props: IProps) {
         setCanvasSize([width, height]);
     }, [width, height])
 
+    const updateSize = (size: [number, number]) => {
+        if(size) {
+            setCanvasSize(size);
+        }else {
+            const { width, height } = form.getFieldsValue();
+            setCanvasSize([width, height]);
+        }   
+    }
+
+    const sizeContent = (
+        <div className={styles.sizeWrap}>
+            <div className={styles.defaultWrap}>
+                {
+                    defaultDESize.map(v => {
+                        return <div key={v.type} className={styles.item} onClick={() => updateSize(v.size)}>
+                                <span className={styles.icon}>{ v.type }</span>
+                                <span> { v.size[0] } x { v.size[1] }</span>
+                            </div>
+                    })
+                }
+            </div>
+            <div className={styles.customWrap}>
+                <h4>自定义尺寸</h4>
+                <div className={styles.form}>
+                    <Form initialValues={{ width: canvasSize[0], height: canvasSize[1] }} layout="inline" form={form}>
+                        <Form.Item
+                            label="宽"
+                            name="width"
+                        >
+                            <InputNumber min={1} max={5000} />
+                        </Form.Item>
+                        <Form.Item
+                            label="高"
+                            name="height"
+                        >
+                            <InputNumber min={1} max={5000} />
+                        </Form.Item>
+                        <Button type="primary" onClick={() => updateSize()}>
+                            应用
+                        </Button>
+                    </Form>
+                    
+                </div>
+            </div>
+        </div>
+    )
+
     return <>
         <Draggable
             handle="#js_toolbar"
@@ -296,191 +346,194 @@ export default function Canvas(props: IProps) {
                         </Tooltip>
                     })
                 }
+                <Divider type="vertical" />
+                <Popover content={sizeContent} title="页面尺寸设置" trigger="click">
+                    <Button className={styles.item} type="text" size="small" style={{color: colorTextLabel}}>
+                        <span style={{pointerEvents: 'none'}}><DesktopOutlined /></span>
+                    </Button>
+                </Popover>
+                
             </div>
         </Draggable>
-        <div className={styles.canvasWrap}>
-            <Moveable
-                ref={moveableRef}
-                draggable={true}
-                rotatable={true}
-                // 内容是否支持缩放
-                scalable={false}
-                // warpable={true}
-                throttleResize={1}
-                target={targets}
-                snappable={true}
-                throttleDrag={1}
-                edgeDraggable={false}
-                startDragRotate={0}
-                throttleDragRotate={0}
-                resizable={true}
-                keepRatio={false}
-                throttleScale={0}
-                renderDirections={["nw","n","ne","w","e","sw","s","se"]}
-                throttleRotate={0}
-                rotationPosition={"top"}
-                originDraggable={true}
-                originRelative={true}
-                snapDirections={{
-                top: true,
-                left: true,
-                bottom: true,
-                right: true,
-                center: true,
-                middle: true,
-            }}
-            elementSnapDirections={{
-                top: true,
-                left: true,
-                bottom: true,
-                right: true,
-                center: true,
-                middle: true,
-            }}
-            maxSnapElementGuidelineDistance={200}
-            elementGuidelines={cubes.map(v => ({
-                element: `.${v.id}`,
-                // className: "red",
-            }))}
-            onDragOrigin={e => {
-                e.target.style.transformOrigin = e.transformOrigin;
-            }}
-            onClick={e => {
-                console.log(111, e.target.id)
-            }}
-            onResize={e => {
-                const id = e.target.id;
-                
-                e.target.style.width = `${e.width}px`;
-                e.target.style.height = `${e.height}px`;
-                // e.target.style.transform = e.drag.transform;
-            }}
-            onResizeEnd={e => {
-                requestAnimationFrame(() => {
-                    const rect = e.moveable.getRect();  
-                    console.log(rect)
-                });
-            }}
-                    // onWarp={e => {
-                    //     console.log(e)
-                    //     e.target.style.transform = e.transform;
-                    // }}
-            onRender={e => {
-                e.target.style.transform = e.transform;
-            }}
-            onDrag={e => {
-                // console.log(e.target.id)
-                e.target.style.transform = e.transform;
-            }}
-            onRenderGroup={e => {
-                console.log(e.events)
-                e.events.forEach(ev => {
-                    ev.target.style.cssText += ev.cssText;
-                });
-            }}
-            onClickGroup={e => {
-                
-                if (!e.moveableTarget) {
-                    setSelectedTargets([]);
-                    return;
-                }
-                if (e.isDouble) {
-                    const childs = groupManager.selectSubChilds(targets, e.moveableTarget);
-
-                    setSelectedTargets(childs.targets());
-                    return;
-                }
-                if (e.isTrusted) {
-                    selectoRef.current!.clickTarget(e.inputEvent, e.moveableTarget);
-                }
-            }}
-            ></Moveable>
-            <Selecto
-                ref={selectoRef}
-                // dragContainer={container.current}
-                selectableTargets={[".wep-area .cube"]}
-                hitRate={0}
-                selectByClick={true}
-                selectFromInside={false}
-                toggleContinueSelect={["shift"]}
-                ratio={0}
-                onDragStart={e => {
-                    const moveable = moveableRef.current!;
-                    const target = e.inputEvent.target;
-                    const flatted = deepFlat(targets);
-
-                    if (
-                        target.tagName === "BUTTON"
-                        || moveable.isMoveableElement(target)
-                        || flatted.some(t => t === target || t.contains(target))
-                    ) {
-                        e.stop();
-                    }
-                    e.data.startTargets = targets;
+            <div className={styles.canvasWrap}>
+                <Moveable
+                    ref={moveableRef}
+                    draggable={true}
+                    rotatable={true}
+                    // 内容是否支持缩放
+                    scalable={false}
+                    // warpable={true}
+                    throttleResize={1}
+                    target={targets}
+                    snappable={true}
+                    throttleDrag={1}
+                    edgeDraggable={false}
+                    startDragRotate={0}
+                    throttleDragRotate={0}
+                    resizable={true}
+                    keepRatio={false}
+                    throttleScale={0}
+                    renderDirections={["nw","n","ne","w","e","sw","s","se"]}
+                    throttleRotate={0}
+                    rotationPosition={"top"}
+                    originDraggable={true}
+                    originRelative={true}
+                    snapDirections={{
+                    top: true,
+                    left: true,
+                    bottom: true,
+                    right: true,
+                    center: true,
+                    middle: true,
                 }}
-                onSelect={e => {
-                    const {
-                        startAdded,
-                        startRemoved,
-                        isDragStartEnd,
-                    } = e;
-
-                    if (isDragStartEnd) {
+                elementSnapDirections={{
+                    top: true,
+                    left: true,
+                    bottom: true,
+                    right: true,
+                    center: true,
+                    middle: true,
+                }}
+                maxSnapElementGuidelineDistance={200}
+                elementGuidelines={cubes.map(v => ({
+                    element: `.${v.id}`,
+                    // className: "red",
+                }))}
+                onDragOrigin={e => {
+                    e.target.style.transformOrigin = e.transformOrigin;
+                }}
+                onClick={e => {
+                    console.log(111, e.target.id)
+                }}
+                onResize={e => {
+                    const id = e.target.id;
+                    
+                    e.target.style.width = `${e.width}px`;
+                    e.target.style.height = `${e.height}px`;
+                    // e.target.style.transform = e.drag.transform;
+                }}
+                onResizeEnd={e => {
+                    requestAnimationFrame(() => {
+                        const rect = e.moveable.getRect();  
+                        console.log(rect)
+                    });
+                }}
+                        // onWarp={e => {
+                        //     console.log(e)
+                        //     e.target.style.transform = e.transform;
+                        // }}
+                onRender={e => {
+                    e.target.style.transform = e.transform;
+                }}
+                onDrag={e => {
+                    // console.log(e.target.id)
+                    e.target.style.transform = e.transform;
+                }}
+                onRenderGroup={e => {
+                    console.log(e.events)
+                    e.events.forEach(ev => {
+                        ev.target.style.cssText += ev.cssText;
+                    });
+                }}
+                onClickGroup={e => {
+                    
+                    if (!e.moveableTarget) {
+                        setSelectedTargets([]);
                         return;
                     }
-                    const nextChilds = groupManager.selectSameDepthChilds(
-                        e.data.startTargets,
-                        startAdded,
-                        startRemoved,
-                    );
+                    if (e.isDouble) {
+                        const childs = groupManager.selectSubChilds(targets, e.moveableTarget);
 
-                    setSelectedTargets(nextChilds.targets());
-                }}
-                onSelectEnd={e => {
-                    const {
-                        isDragStartEnd,
-                        isClick,
-                        added,
-                        removed,
-                        inputEvent,
-                    } = e;
-                    const moveable = moveableRef.current!;
-
-                    if (isDragStartEnd) {
-                        inputEvent.preventDefault();
-
-                        moveable.waitToChangeTarget().then(() => {
-                            moveable.dragStart(inputEvent);
-                        });
+                        setSelectedTargets(childs.targets());
+                        return;
                     }
-                    let nextChilds: TargetList;
+                    if (e.isTrusted) {
+                        selectoRef.current!.clickTarget(e.inputEvent, e.moveableTarget);
+                    }
+                }}
+                ></Moveable>
+                <Selecto
+                    ref={selectoRef}
+                    // dragContainer={container.current}
+                    selectableTargets={[".wep-area .cube"]}
+                    hitRate={0}
+                    selectByClick={true}
+                    selectFromInside={false}
+                    toggleContinueSelect={["shift"]}
+                    ratio={0}
+                    onDragStart={e => {
+                        const moveable = moveableRef.current!;
+                        const target = e.inputEvent.target;
+                        const flatted = deepFlat(targets);
 
-                    if (isDragStartEnd || isClick) {
-                        if (isCommand) {
-                            nextChilds = groupManager.selectSingleChilds(targets, added, removed);
-                        } else {
-                            nextChilds = groupManager.selectCompletedChilds(targets, added, removed, isShift);
+                        if (
+                            target.tagName === "BUTTON"
+                            || moveable.isMoveableElement(target)
+                            || flatted.some(t => t === target || t.contains(target))
+                        ) {
+                            e.stop();
                         }
-                        
-                    } else {
-                        nextChilds = groupManager.selectSameDepthChilds(e.data.startTargets, added, removed);
-                    }
-                    e.currentTarget.setSelectedTargets(nextChilds.flatten());
-                    setSelectedTargets(nextChilds.targets());
-                }}
-            ></Selecto>
-            <div className={`${styles.canvas} wep-area`} ref={canvasRef} style={{background: colorBgContainer, width: canvasSize[0], height: canvasSize[1], borderRadius }}>
-                {cubes.map(i => <div className={`cube ${i.id} ${styles.item}`} key={i.id} id={i.id} style={{
-                    width: i.base.width,
-                    height: i.base.height,
-                    transform: i.base.transform
-                }}>
-                    { i.name === 'Button' && <Button type="primary">Next-Admin</Button> }
-                    {/* { i.name === 'Image' && <img src="/qtcode.png" alt="next-admin drag and drop" /> } */}
-                    { i.name === 'Image' && <img src="/logo_bg.svg" alt="next-admin drag and drop" /> }
-                </div>)}
-                <span id="cube_holder_block"></span>
-            </div>
+                        e.data.startTargets = targets;
+                    }}
+                    onSelect={e => {
+                        const {
+                            startAdded,
+                            startRemoved,
+                            isDragStartEnd,
+                        } = e;
+
+                        if (isDragStartEnd) {
+                            return;
+                        }
+                        const nextChilds = groupManager.selectSameDepthChilds(
+                            e.data.startTargets,
+                            startAdded,
+                            startRemoved,
+                        );
+
+                        setSelectedTargets(nextChilds.targets());
+                    }}
+                    onSelectEnd={e => {
+                        const {
+                            isDragStartEnd,
+                            isClick,
+                            added,
+                            removed,
+                            inputEvent,
+                        } = e;
+                        const moveable = moveableRef.current!;
+
+                        if (isDragStartEnd) {
+                            inputEvent.preventDefault();
+
+                            moveable.waitToChangeTarget().then(() => {
+                                moveable.dragStart(inputEvent);
+                            });
+                        }
+                        let nextChilds: TargetList;
+
+                        if (isDragStartEnd || isClick) {
+                            if (isCommand) {
+                                nextChilds = groupManager.selectSingleChilds(targets, added, removed);
+                            } else {
+                                nextChilds = groupManager.selectCompletedChilds(targets, added, removed, isShift);
+                            }
+                            
+                        } else {
+                            nextChilds = groupManager.selectSameDepthChilds(e.data.startTargets, added, removed);
+                        }
+                        e.currentTarget.setSelectedTargets(nextChilds.flatten());
+                        setSelectedTargets(nextChilds.targets());
+                    }}
+                ></Selecto>
+                <div className={`${styles.canvas} wep-area`} ref={canvasRef} style={{background: colorBgContainer, width: canvasSize[0], height: canvasSize[1], borderRadius }}>
+                    {cubes.map(i => <div className={`cube ${i.id} ${styles.item}`} key={i.id} id={i.id} style={{
+                        width: i.base.width,
+                        height: i.base.height,
+                        transform: i.base.transform
+                    }}>{i.text}</div>)}
+                    <span id="cube_holder_block"></span>
+                </div>
         </div>
     </>
     
