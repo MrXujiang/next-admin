@@ -44,6 +44,7 @@ Next-Admin 1.2.0
 - Support AI conversations
 - Support Choreography
 - Support Excel
+- Support Chart Editor
 
 ## Usage
 
