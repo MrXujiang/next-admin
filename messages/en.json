@@ -29,7 +29,8 @@
         "resource": "Asset management",
         "dragMode": "DragMode",
         "agents": "AI Agents",
-        "excel": "Excel"
+        "excel": "Excel",
+        "chart": "Chart Editor"
     },
     "user": {
         "userList": "User List"

@@ -29,7 +29,8 @@
         "resource": "资产管理",
         "dragMode": "拖拽搭建",
         "agents": "AI智能问答",
-        "excel": "电子表格"
+        "excel": "电子表格",
+        "chart": "图表制作"
     },
     "user": {
         "userList": "用户列表"

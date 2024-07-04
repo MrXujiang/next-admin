@@ -10,7 +10,8 @@ import {
     BuildOutlined,
     OpenAIOutlined,
     PartitionOutlined,
-    FileExcelOutlined
+    FileExcelOutlined,
+    PieChartOutlined
 } from '@ant-design/icons';
 import React from 'react';
 
@@ -30,6 +31,11 @@ const getNavList = (t: any) => {
                     key: '/dashboard/monitor',
                     icon: <FundOutlined />,
                     label: t('monitor')
+                },
+                {
+                    key: '/dashboard/chart',
+                    icon: <PieChartOutlined />,
+                    label: t('chart')
                 },
                 {
                     key: '/dashboard/rpa',
