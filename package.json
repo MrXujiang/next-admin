@@ -42,6 +42,8 @@
     "@antv/g-plugin-rough-canvas-renderer": "^2.0.8",
     "@antv/g2": "^5.2.0",
     "@antv/g6": "^4.8.21",
+    "@bytemd/plugin-gfm": "^1.21.0",
+    "@bytemd/react": "^1.21.0",
     "@daybrush/utils": "^1.13.0",
     "@fortune-sheet/react": "^0.19.7",
     "@moveable/helper": "^0.1.3",

@@ -30,7 +30,8 @@
         "dragMode": "DragMode",
         "agents": "AI Agents",
         "excel": "Excel",
-        "chart": "Chart Editor"
+        "chart": "Chart Editor",
+        "mdDoc": "Markdown编辑器"
     },
     "user": {
         "userList": "User List"

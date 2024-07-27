@@ -31,4 +31,8 @@ div, span, img, p, main {
   flex-wrap: wrap;
 }
 
+.bytemd {
+  height: calc(100vh - 260px) !important;
+}
+
 

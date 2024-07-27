@@ -36,15 +36,9 @@ export default function Home() {
                   children: t('log.3'),
                 },
                 {
-                  color: 'orange',
-                  children: t('log.4'),
-                },
-                {
-                  color: 'orange',
                   children: t('log.5'),
                 },
                 {
-                  color: 'orange',
                   children: t('log.6'),
                 },
                 {
@@ -57,7 +51,7 @@ export default function Home() {
 
           <div>
             <Link href="/dashboard" style={{marginRight: 20}}><Button type="primary">{t('try')}</Button></Link>
-            <Link href="http://wep.turntip.cn" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
+            <Link href="http://doc.dooring.vip" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
           </div>
         </div>
         

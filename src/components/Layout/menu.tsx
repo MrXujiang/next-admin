@@ -11,7 +11,8 @@ import {
     OpenAIOutlined,
     PartitionOutlined,
     FileExcelOutlined,
-    PieChartOutlined
+    PieChartOutlined,
+    FileMarkdownOutlined
 } from '@ant-design/icons';
 import React from 'react';
 
@@ -58,6 +59,11 @@ const getNavList = (t: any) => {
             key: '/excel',
             icon: <FileExcelOutlined />,
             label: t('excel')
+        },
+        {
+            key: '/md',
+            icon: <FileMarkdownOutlined />,
+            label: t('mdDoc')
         },
         {
             key: '/formEngine',
