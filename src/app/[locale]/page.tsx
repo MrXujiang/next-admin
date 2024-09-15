@@ -51,6 +51,7 @@ export default function Home() {
 
           <div>
             <Link href="/dashboard" style={{marginRight: 20}}><Button type="primary">{t('try')}</Button></Link>
+            <Link href="http://flowmix.tunrtip/flow" style={{marginRight: 20}}><Button type="primary"> { t('flow') } </Button></Link>
             <Link href="http://doc.dooring.vip" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
           </div>
         </div>

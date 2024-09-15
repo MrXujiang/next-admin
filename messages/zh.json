@@ -12,7 +12,8 @@
             "7": "AI智能体"
         },
         "try": "立即体验",
-        "wep": "Nocode/WEP文档引擎"
+        "wep": "flowmix/doc文档引擎",
+        "flow": "工作流引擎"
     },
     "global": {
         "technological exchanges": "技术交流",
@@ -30,7 +31,8 @@
         "agents": "AI智能问答",
         "excel": "电子表格",
         "chart": "图表制作",
-        "mdDoc": "MD编辑器"
+        "mdDoc": "MD编辑器",
+        "outlink": "多模态文档引擎（外链）"
     },
     "user": {
         "userList": "用户列表"

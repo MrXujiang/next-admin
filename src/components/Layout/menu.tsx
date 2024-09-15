@@ -12,6 +12,7 @@ import {
     PartitionOutlined,
     FileExcelOutlined,
     PieChartOutlined,
+    LinkOutlined,
     FileMarkdownOutlined
 } from '@ant-design/icons';
 import React from 'react';
@@ -64,6 +65,11 @@ const getNavList = (t: any) => {
             key: '/md',
             icon: <FileMarkdownOutlined />,
             label: t('mdDoc')
+        },
+        {
+            key: 'http://flowmix.turntip.cn/docx',
+            icon: <LinkOutlined />,
+            label: t('outlink')
         },
         {
             key: '/formEngine',

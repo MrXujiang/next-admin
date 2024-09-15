@@ -75,6 +75,10 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
   }
 
   const handleSelect = (row: {key: string}) => {
+    if(row.key.includes('http')) {
+      window.open(row.key)
+      return
+    }
     router.push(row.key)
   }
 
@@ -113,7 +117,7 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
                 <Header style={{ padding: 0, ...getThemeBg(curTheme), display: 'flex' }}>
                     <div className={styles.rightControl}>
                         <span className={styles.group}>
-                            <Popover content={<div style={{width: '100%'}}><img src="/tech.png" /></div>} title="技术交流&分享">
+                            <Popover content={<div style={{width: '100%'}}><img width={180} src="http://cdn.dooring.cn/FlqY2Ji13zIMMzucQITvryG13m5j" /></div>} title="技术交流&分享">
                                 { t('technological exchanges') }
                             </Popover>
                         </span>

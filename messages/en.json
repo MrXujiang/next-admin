@@ -13,7 +13,8 @@
             "7": "World Wide Table"
         },
         "try": "try it now",
-        "wep": "Nocode/WEP"
+        "wep": "flowmix/doc",
+        "flow": "flowmix/flow"
     },
     "global": {
         "technological exchanges": "Technological exchanges",
@@ -31,7 +32,8 @@
         "agents": "AI Agents",
         "excel": "Excel",
         "chart": "Chart Editor",
-        "mdDoc": "Markdown编辑器"
+        "mdDoc": "Markdown编辑器",
+        "outlink": "flowmix/docx(otherLink)"
     },
     "user": {
         "userList": "User List"
