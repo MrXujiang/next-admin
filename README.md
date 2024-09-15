@@ -24,6 +24,7 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 - Login Page: http://next-admin.com/user/login
 - china mirror: https://gitee.com/lowcode-china/next-admin
 - Nocode/WEP: http://doc.dooring.vip
+- flowmix/flow: http://flowmix.turntip.cn/flow
 
 ## 1.0 is out! 🎉🎉🎉
 
