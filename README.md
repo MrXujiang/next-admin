@@ -20,10 +20,9 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 
 </div>
 
-- Preview: http://next-admin.com
-- Login Page: http://next-admin.com/user/login
+- mindlink：https://mindlink.turntip.cn
 - china mirror: https://gitee.com/lowcode-china/next-admin
-- Nocode/WEP: http://flowmix.turntip.cn/docx
+- flowmix/docx: http://flowmix.turntip.cn/docx
 - flowmix/flow: http://flowmix.turntip.cn/flow
 
 ## 1.0 is out! 🎉🎉🎉
