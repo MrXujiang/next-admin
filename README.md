@@ -25,6 +25,11 @@ An out-of-box UI solution for enterprise applications as a React boilerplate.
 - flowmix/docx: http://flowmix.turntip.cn/docx
 - flowmix/flow: http://flowmix.turntip.cn/flow
 
+
+🎉福利🎉: 最近基于nextjs实现的多维表格正式上线, 前100名用户仅需399元, 感兴趣可以参考体验一下.
+
+- 多维表格编辑器: http://mute.turntip.cn
+
 ## 1.0 is out! 🎉🎉🎉
 
 Next-Admin 1.2.0
